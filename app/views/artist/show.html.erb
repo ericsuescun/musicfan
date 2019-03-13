@@ -2,3 +2,19 @@
   <strong>Artist:</strong>
   <%= @artist.name %>
 </p>
+
+<h2>Albums</h2>
+<table>
+  <tr>
+    <th>Album:</th>
+    <th>Cover:</th>
+    <th>Lanzamiento:</th>
+  </tr>
+  <% @artist.albums.each do |album| %>
+    <tr>
+      <td><%= album.name %></td>
+      <td><img src=<%= album.image_url %> alt="pic" height="124" width="84"></td>
+      <td><%= album.released_at %></td>
+    </tr>
+  <% end %>
+</table>
